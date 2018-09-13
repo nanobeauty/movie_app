@@ -5,8 +5,8 @@ class Movie extends Component {
     render() {
       return (
         <div className="Movie">
-            <MoviePoster />
-            <h1>Hello This is Movie</h1>
+            <MoviePoster posterVAL={this.props.poster}/>
+            <h1>{this.props.title}</h1>
         </div>
       );
     }
@@ -14,9 +14,10 @@ class Movie extends Component {
 
   class MoviePoster extends Component {
     render() {
+      console.log(this.props);  //posterVAL로 이름 변경해서 구조를 더 명확히 하고 props로 posterVAL 확인
       return (
         <div className="MoviePoster">
-          <img src="https://imgix.bustle.com/uploads/image/2017/8/9/5846855f-3fd5-4db9-84cb-5f65ed2bd107-hunger-games.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70" />
+          <img src={this.props.posterVAL} />
         </div>
       );
     }
