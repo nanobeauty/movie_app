@@ -17,7 +17,7 @@ class Movie extends Component {
       console.log(this.props);  //posterVAL로 이름 변경해서 구조를 더 명확히 하고 props로 posterVAL 확인
       return (
         <div className="MoviePoster">
-          <img src={this.props.posterVAL} />
+          <img src={this.props.posterVAL} alt= "" />
         </div>
       );
     }
