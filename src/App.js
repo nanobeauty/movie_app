@@ -10,32 +10,7 @@ class App extends Component {
   state = {}
 
   componentDidMount(){
-    setTimeout(() => {
-      this.setState({
-        movies: [
-          {
-            title: "Matrix",
-            poster: "http://www.gstatic.com/tv/thumb/v22vodart/22804/p22804_v_v8_as.jpg"
-          },
-          {
-            title: "Full Metal Jakcek",
-            poster: "http://www.gstatic.com/tv/thumb/v22vodart/10114/p10114_v_v8_ab.jpg"
-          },
-          {
-            title: "OldBoy",
-            poster: "http://www.gstatic.com/tv/thumb/v22vodart/35948/p35948_v_v8_ab.jpg"
-          },
-          {
-            title: "Star Wars",
-            poster: "https://www.starwarsnewsnet.com/wp-content/uploads/2016/04/star-wars-the-force-awakens-the-saga-tribute-trailer-extended-722634.jpg"
-          },
-          {
-            title: "trainspotting",
-            poster: "http://www.gstatic.com/tv/thumb/v22vodart/35948/p35948_v_v8_ab.jpg"
-          }
-        ]
-      })
-    }, 3000)
+    fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
   }
 
   _renderMovies = () => {
